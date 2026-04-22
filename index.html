@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Info</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSOtp1_hIyGFregiLV8bLWnCkYdzzIJfx72A&s" alt="Hostel Logo" class="logo">
+            <h3>NIT Kurushetra Girls Hostel</h3>
+        </div>
+        <div class="language-selector">
+            <div id="userDisplay">
+                <div class="auth-buttons">
+                    <a href="login.html">Login</a>
+                    <a href="sign.html">Sign Up</a>
+                </div>
+            </div>
+            <input list="languages" placeholder="Select Language">
+            <datalist id="languages">
+                <option value="English">
+                <option value="Spanish">
+                <option value="French">
+                <option value="German">
+            </datalist>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cauvery Hostel</h1>
+            <p>Your home away from home</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="rules">
+            <h2>Rules and Regulations</h2>
+            <ul>
+                <li>Hostel in time is 8:30pm.</li>
+                <li>No smoking inside the premises.</li>
+                <li>Respect other guests and keep noise levels down after 10 PM.</li>
+                <li>Keep common areas clean and tidy.</li>
+                <li>Any damages will be charged to the students.</li>
+            </ul>
+        </section>
+        <section class="fees">
+            <h2>Hostel Fees Details</h2>
+            <table border="1" cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>Fee Type</th>
+                        <th>Amount (INR)</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hostel Rent</td>
+                        <td>₹10,500</td>
+                        <td>Per Semester</td>
+                    </tr>
+                    <tr>
+                        <td>Mess Charges</td>
+                        <td>₹30,000</td>
+                        <td>Per Semester</td>
+                    </tr>
+                    <tr>
+                        <td>Electricity Charges</td>
+                        <td>₹4,500</td>
+                        <td>Per Semester</td>
+                    </tr>
+                    <tr>
+                        <td>Development Maintenance Fund (HDMF)</td>
+                        <td>₹6,000 </td>
+                        <td>One Time (Non-Refundable)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="feedback">
+            <h2>Feedback</h2>
+            <form action="#" method="post"> 
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Feedback" rows="5" required></textarea>
+                <button type="submit" onclick="alert('submitted successfully')">Submit Feedback</button>
+            </form>
+        </section>
+
+        <section class="qna">
+            <h2>Q&A</h2 >
+            <details>
+                <summary>What is the check-in time?</summary>
+                <p>Check-in is at 8:30 pm.</p>
+            </details>
+            <details>
+                <summary>Is there Wi-Fi available?</summary>
+                <p>Free Wi-Fi is available throughout the hostel.</p>
+            </details>
+            <details>
+                <summary>Are pets allowed?</summary>
+                <p>Sorry, pets are not allowed in the hostel.</p>
+            </details>
+        </section>
+        <section class="leave">
+            <h2>Leave</h2>
+            <form action="#">
+                <label>
+                    Student Name: 
+                    <input type="text" name="studentName" required>
+                </label>
+                <label>
+                    Email Id: 
+                    <input type="email" name="emailId" required>
+                </label>
+                <label for="stuphone">Phone No: </label>
+                <input type="tel" name="stuphone" class="stuphone" placeholder="+91-12345-67890" pattern="\+91-[0-9]{5}-[0-9]{5}">
+                <label>
+                    Leave Start Date: 
+                    <input type="date" name="leaveStart" max required>
+                </label>
+                <label>
+                    Leave End Date: 
+                    <input type="date" name="leaveEnd" required>
+                </label>
+
+                <label for="reason" required>
+                    Reasons for Leave: 
+                    <label>
+                        <input type="radio" name="reason" value="medical">
+                        Medical
+                    </label>
+                    <label>
+                        <input type="radio" name="reason" value="urgent">
+                        Urgent
+                    </label>
+                    <label>
+                        <input type="radio" name="reason" value="marriage">
+                        Marriage
+                    </label>
+                    <label>
+                        <input type="radio" name="reason" value="others">
+                        Others
+                    </label>
+                </label>
+                <textarea class="reasonEx" name="reasonExplain" id="reasonExplain" rows="5" placeholder="Enter the reason"></textarea>
+                
+                <label for="location" required>
+                    Location:  
+                    <label>
+                        <input type="radio" name="location" value="chandigarh">
+                        Chandigarh
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="shimla">
+                        Shimla
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="amritsar">
+                        Amritsar
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="dshala">
+                        Dshala 
+                    </label>
+                </label>
+                <a href="login.html"><input type="button" class="button" value="Submit"></a>
+            </form>
+        </section>
+        <section class="map">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2766.671801971731!2d76.81422599608746!3d29.94773137957819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e3f51e8434397%3A0xe61d82055ea40373!2sJubilee%20Hall%2C%20NIT%20Kurukshetra!5e0!3m2!1sen!2sin!4v1769626953473!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+</body>
+<script>
+    const user = localStorage.getItem("loggedInUser");
+
+    if (user) {
+        document.getElementById("userDisplay").innerHTML = 
+            `Welcome, ${user} 👋 <button class="logOut" onclick="logout()">Logout</button>`;
+    }
+
+    function logout() {
+        document.getElementById("userDisplay").innerHTML = 
+            `<div class="auth-buttons">
+                    <a href="login.html">Login</a>
+                    <a href="sign.html">Sign Up</a>
+                </div>`;
+        localStorage.removeItem("loggedInUser");
+        location.reload();
+    }
+</script>
+</html>

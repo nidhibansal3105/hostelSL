@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="mainDiv">
+        <form onsubmit="return validateUser()" action="./index.html">
+            <div class="name">
+                <label for="username">Username: </label>
+                <input type="text" name="username" class="username" required>
+            </div>
+            <div class="passkey">
+                <label for="passkey">Password: </label>
+                <input type="password" name="passkey" class="passkeyIn" minlen="2" required> 
+            </div>
+            <div class="forgotPass"><a href="./forgotPass.html">Forgot Password?</a></div>
+            <div class="signup">
+                Don't have an account? <a href="./sign.html">SignUp</a> 
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+<script>
+    function validateUser() {
+        let username = document.querySelector('.username').value.trim();
+        let pass = document.querySelector('.passkeyIn').value;
+
+        const storedUser = JSON.parse(localStorage.getItem(username));
+
+        if (!storedUser) {
+            alert("❌ User not found. Please sign up first.");
+            return false;
+        }
+
+        if (storedUser.password !== pass) {
+            alert("❌ Incorrect password");
+            return false;
+        }
+        localStorage.setItem("loggedInUser", username);
+        alert("✅ Login successful! Redirecting...");
+        return true;
+    }
+</script>
+</html>

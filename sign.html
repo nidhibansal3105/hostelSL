@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp Page</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="mainDiv">
+        <form onsubmit="return validate()" action="./login.html">
+            <div class="name">
+                <label for="username">Username: </label>
+                <input type="text" name="username" class="username" required>
+            </div>
+            <div class="passkey">
+                <label for="passkey">Password: </label>
+                <input type="password" name="passkey" class="passkeyIn" minlength="2" required> 
+            </div>
+            <div class="confirmPass">
+                <label for="confirmPass">Confirm Password: </label>
+                <input type="password" name="confirmPass" class="confirmPassIn" minlength="8" required> 
+            </div>
+            <div class="captcha">
+                <div class="userCap">
+                    <label for="capIn">Captcha: </label>
+                    <input class="capIn" type="number">
+                </div>
+                <div class="showCap" id="showCap"></div>
+            </div>
+            <button type="submit">SignUp</button>
+        </form>
+    </div>
+</body>
+<script>
+    let num1, num2;
+
+    function generateCaptcha() {
+        num1 = Math.floor(Math.random() * 10) + 1;
+        num2 = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("showCap").innerHTML = `${num1} + ${num2}`;
+    }
+
+    generateCaptcha();
+
+    function validate() {
+        let username = document.querySelector('.username').value.trim();
+        let pass = document.querySelector('.passkeyIn').value;
+        let cPass = document.querySelector('.confirmPassIn').value;
+        let userAns = document.querySelector(".capIn").value;
+
+        let countLower = 0, countUpper = 0, countSpecial = 0, countNum = 0;
+
+        for (let i = 0; i < pass.length; i++) {
+            if (pass[i] >= 'a' && pass[i] <= 'z') countLower++;
+            else if (pass[i] >= 'A' && pass[i] <= 'Z') countUpper++;
+            else if (pass[i] >= '0' && pass[i] <= '9') countNum++;
+            else countSpecial++;
+        }
+
+        // Confirm password
+        if (cPass !== pass) {
+            alert("❌ Passwords do not match");
+            return false;
+        }
+
+        // Strong password check
+        if (pass.length < 8 || countLower < 1 || countUpper < 1 || countNum < 1 || countSpecial < 1) {
+            alert("❌ Password must have 8+ chars, uppercase, lowercase, number & special char");
+            return false;
+        }
+
+        // Captcha check
+        if (parseInt(userAns) !== (num1 + num2)) {
+            alert("❌ Captcha is incorrect");
+            generateCaptcha();
+            return false;
+        }
+
+        // Store user
+        const user = {
+            username: username,
+            password: pass
+        };
+
+        localStorage.setItem(username, JSON.stringify(user));
+
+        alert("✅ Signup successful!");
+        return true;
+    }
+</script>
+</html>

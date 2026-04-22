@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{   
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(42, 21, 57, 0.891),rgba(130, 80, 163, 0.891), rgba(240, 235, 235, 0.892));
+    backdrop-filter: blur(100px);
+}
+
+.mainDiv{
+    padding: 1rem;
+    border: 7px ridge rgb(49, 32, 75);
+    color: rgb(245, 242, 242);
+    font-family:'Times New Roman', Times, serif;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(27, 13, 13, 0.224);
+    box-shadow: 0 10px 20px black;
+}
+
+form{
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 3px;
+
+}
+
+label{
+    font-weight: 600;
+    margin-right: 2rem;
+    margin-left: 0.8rem;
+}
+
+input{
+    height: 2rem;
+    width: 95%;
+    border-radius: 2.5rem;
+    padding: 0.6rem;
+    margin: 1rem 0px 1rem 0px;
+}
+
+.forgotPass{
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.signup{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+}
+a{
+    margin-left: 1rem;
+}
+.captcha{
+    margin-bottom: 1rem;
+}
+
+.captcha label{
+    margin-right: 11px;
+}
+
+.userCap{
+    margin-bottom: 0.8rem;
+}
+
+.showCap{
+    width: 95%;
+    padding: 0.5rem;
+    background-color: rgb(175, 175, 175);
+    height: 2.5rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    color: black;
+}
+button{
+    height: 2rem;
+    background-color: rgb(49, 32, 75);
+    border: 0px;
+    border-radius: 2.5rem;
+    color: white;
+
+}
+
+.captcha{
+    border: 2px solid black;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: rgba(56, 0, 91, 0.419);
+}
+
+.imageRow {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.imageRow img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: 3px solid transparent;
+}
+
+.imageRow img.selected {
+    border: 3px solid green;
+}
